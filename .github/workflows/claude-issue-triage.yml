@@ -64,6 +64,7 @@ jobs:
                ## Propuesta de solución (pasos concretos)
                ## Riesgos y casos borde
                ## Información faltante (preguntas al autor, si aplica)
+            Formato: `triage.md` se publicará tal cual como comentario en GitHub, así que debe estar en Markdown compatible con GitHub (GFM): encabezados `##`, listas, tablas, bloques de código con lenguaje (```js), `código` en línea y listas de tareas `- [ ]` cuando aplique. No uses HTML ni formatos que GitHub no renderice.
             4. NO modifiques código, NO crees ramas ni PRs, NO comentes en el issue (el comentario lo publica un paso posterior).
           claude_args: |
             --allowedTools "Bash(gh issue view:*),Bash(gh issue edit:*),Read,Glob,Grep,Write"
