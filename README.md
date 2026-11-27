@@ -37,6 +37,12 @@ Es una versión jugable del Tetris clásico con todas las mecánicas que esperar
 - Las **7 piezas estándar** (I, O, T, S, Z, J, L) con colores diferenciados, más la **tuerca** (anillo 3×3 con centro vacío) como pieza reto.
 - **Rotación** con _wall kicks_ básicos (pequeños desplazamientos para que la pieza pueda rotar pegada a la pared).
 - **Soft drop** (bajada acelerada) y **hard drop** (caída instantánea).
+- **Piezas no estándar**: pentominós **+**, **U** e **Y** (12 % de probabilidad) y un bloque **1×1** de recompensa tras limpiar un Tetris (4 líneas).
+- **Combo y bonus**: combo x2, x3… por turnos consecutivos con líneas, T-spin, B2B (Tetris/T-spin ×1.5) y Perfect Clear, con mensajes, destello y sonido (`M` silencia).
+- **Hold** (`C`/`Shift`): una vez por pieza; el slot se atenúa mientras está bloqueado.
+- **Habilidades** (`E`, barra llena = 100 energía, +15 por línea): ver próximas 5, cambiar pieza, ralentizar 10 s, deshacer, hold extra.
+- **Desafíos** (selector «Modo»): Sprint 40 líneas/2:00, basura cada 10 s (sobrevive 90 s), bloques fijos pre-colocados, piezas invisibles tras asentarse y rotación inversa (nivel 8).
+- **Power-ups**: cada 5 líneas la siguiente pieza es un bloque 1×1 especial: 💣 bomba (área 3×3), ⚡ rayo (fila o columna), 🎨 tinte (el color bajo el bloque pasa a comodines ★; al limpiar una línea con comodín se eliminan todos), ⬇️ gravedad (compacta huecos), ❄️ congelar (5 s sin caída).
 - **Pieza fantasma** (_ghost piece_): muestra dónde aterrizará la pieza actual.
 - **Vista previa** de la siguiente pieza.
 - **Sistema de puntuación** clásico de Tetris (100 / 300 / 500 / 800 multiplicado por nivel).

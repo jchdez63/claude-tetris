@@ -16,6 +16,42 @@
   <h1 class="game-title">TETRIS</h1>
   <div class="wrapper">
     <div class="game-container">
+      <aside class="panel panel-left">
+        <div class="panel-section">
+          <span class="label">MODO</span>
+          <select id="mode-select" aria-label="Modo de juego">
+            <option value="classic">Clásico</option>
+            <option value="sprint">Sprint: 40 líneas en 2:00</option>
+            <option value="garbage">Basura cada 10 s</option>
+            <option value="fixed">Bloques fijos</option>
+            <option value="invisible">Piezas invisibles</option>
+            <option value="reverse">Rotación inversa</option>
+          </select>
+          <span id="objective" class="hint"></span>
+        </div>
+
+        <div class="panel-section">
+          <span class="label">HOLD</span>
+          <canvas id="hold-canvas" class="side-canvas" width="120" height="120"></canvas>
+        </div>
+
+        <div class="panel-section">
+          <span class="label">ENERGÍA</span>
+          <div id="energy-bar"><div id="energy-fill"></div></div>
+          <span id="energy-hint" class="hint"></span>
+        </div>
+
+        <div class="panel-section">
+          <span class="label">COMBO</span>
+          <span id="combo" class="combo">—</span>
+        </div>
+
+        <div id="peek-section" class="panel-section hidden">
+          <span class="label">PRÓXIMAS 5</span>
+          <canvas id="peek-canvas" class="side-canvas" width="120" height="300"></canvas>
+        </div>
+      </aside>
+
       <canvas id="board" width="300" height="600"></canvas>
 
       <aside class="panel">
@@ -34,7 +70,7 @@
 
         <div class="panel-section">
           <span class="label">NEXT</span>
-          <canvas id="next-canvas" width="120" height="120"></canvas>
+          <canvas id="next-canvas" class="side-canvas" width="120" height="120"></canvas>
         </div>
 
         <div class="panel-section controls">
@@ -44,6 +80,9 @@
             <li><kbd>↑</kbd> rotar</li>
             <li><kbd>↓</kbd> bajar</li>
             <li><kbd>Space</kbd> caída</li>
+            <li><kbd>C</kbd>/<kbd>Shift</kbd> hold</li>
+            <li><kbd>E</kbd> habilidad</li>
+            <li><kbd>M</kbd> sonido</li>
             <li><kbd>P</kbd> pausa</li>
           </ul>
         </div>
@@ -55,6 +94,14 @@
         <p id="overlay-title">GAME OVER</p>
         <p id="overlay-score"></p>
         <button id="restart-btn">Reiniciar</button>
+      </div>
+    </div>
+
+    <div id="skill-menu" class="overlay hidden">
+      <div class="overlay-box">
+        <p class="menu-title">HABILIDAD</p>
+        <ol id="skill-list" class="skill-list"></ol>
+        <p class="hint">Pulsa 1–5 · Esc para cancelar</p>
       </div>
     </div>
   </div>

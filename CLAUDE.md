@@ -19,6 +19,9 @@ Three files: `index.html` (DOM + two canvases: `#board` 300×600, `#next-canvas`
 Gotchas:
 - `COLS`/`ROWS`/`BLOCK` must match the `<canvas id="board">` width/height in `index.html` (`COLS×BLOCK` × `ROWS×BLOCK`).
 - Pause/game-over stop the loop via `cancelAnimationFrame(animId)`; resume calls `loop` manually. `init()` also cancels before restarting.
+- Board cell values: 1–8 standard (8 = tuerca), 9 power-up block (never stored), 10 wildcard, 11–13 pentominoes, 14 single, 15 garbage. `PIECES[9]`/`[10]` are reserved `null`.
+- Pieces come from a 6-piece `queue` (`next = queue[0]`); `spawn` injects pending power-up/single rewards via `randomPiece(true)`. `lockPiece` also does undo snapshot, T-spin detection, combo/B2B scoring (`clearLines(tspin)`).
+- `MODES` (challenge rules) is selected via `#mode-select`; `init()` reads it. Extra panels: hold, energy/skills (`SKILLS`, menu `#skill-menu`), peek.
 - Random piece is uniform (no 7-bag); rotation kicks are simple horizontal offsets `[0,-1,1,-2,2]` (no SRS).
 - Speed: `max(100, 1000 − (level−1)×90)` ms; level = `floor(lines/10)+1`.
 
